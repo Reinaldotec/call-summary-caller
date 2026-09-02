@@ -1,0 +1,17 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "AI_GATEWAY_API_KEY",
+      "description": "Vercel AI Gateway API key for the AI model (anthropic/claude-haiku-4-5). Obtain from the Vercel AI Gateway dashboard. Falls back to VERCEL_OIDC_TOKEN if not set.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "VERCEL_OIDC_TOKEN",
+      "description": "Vercel OIDC token for Vercel Sandbox authentication. Obtain by running `vercel link` then `vercel env pull` in a linked Vercel project. Required for the agent's sandbox code execution.",
+      "requiredAtBoot": false
+    }
+  ]
+}
